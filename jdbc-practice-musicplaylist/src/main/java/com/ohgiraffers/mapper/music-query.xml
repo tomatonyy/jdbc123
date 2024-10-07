@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+    <!-- Create: insert 음악을 추가시킬 때 -->
+    <entry key="insertMusic">
+        INSERT INTO TBL_MUSIC
+        (
+        MUSIC_CODE
+        , MUSIC_TITLE
+        , ARTIST_NAME
+        )
+        VALUES
+        (
+        ?
+        , ?
+        , ?
+        )
+    </entry>
+
+    <entry key="selectLastMusicCode">
+        SELECT MAX(MUSIC_CODE)
+        FROM TBL_MUSIC
+    </entry>
+
+    <!-- Read: select 모든 음악 조회-->
+    <entry key="selectAllMusic">
+           SELECT  MUSIC_CODE
+                 , MUSIC_TITLE
+                 , ARTIST_NAME
+              FROM TBL_MUSIC
+    </entry>
+
+    <!-- Update: 변경할 때 -->
+     <entry key="updateMusic">
+            UPDATE TBL_MUSIC
+               SET MUSIC_TITLE = ?
+                 , ARTIST_NAME = ?
+             WHERE MUSIC_CODE = ?
+     </entry>
+
+    <!-- Delete: 삭제할 때 -->
+   <entry key="deleteMusic">
+          DELETE
+            FROM TBL_MUSIC
+           WHERE MUSIC_CODE = ?
+   </entry>
+
+   </properties>
